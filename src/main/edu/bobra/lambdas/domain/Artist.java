@@ -1,13 +1,14 @@
 package edu.bobra.lambdas.domain;
 
-import java.util.HashSet;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
 public class Artist {
 	private final String name;
 	private String origin;
-	private Set<Artist> members = new HashSet<Artist>();
+	private Set<Artist> members = new LinkedHashSet<Artist>();
 
 	public Artist(String name) {
 		this.name = name;
@@ -18,11 +19,15 @@ public class Artist {
 		return this;
 	}
 
-	public Artist withMember(Artist member) {
-		addMember(member);
+	public void addMember(Artist member){
+		members.add(member);
+	}
+	
+	public Artist withMembers(Artist... membersArray){
+		members.addAll(Arrays.asList(membersArray));
 		return this;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -31,21 +36,9 @@ public class Artist {
 		return origin;
 	}
 
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
-
 	public Stream<Artist> getMembers() {
 		return members.stream();
-	}
-
-	public void addMember(Artist member) {
-		members.add(member);
-	}
-
-	public void setMembers(Set<Artist> members) {
-		this.members = members;
-	}
+	}	
 
 	public static Artist artist(String name) {
 		return new Artist(name);
