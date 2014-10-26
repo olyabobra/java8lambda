@@ -17,13 +17,13 @@ public class Exercise1Test {
 	@Test
 	public void shouldAddUpNumbers() {
 		Stream<Integer> numbers = Arrays.asList(1, 3).stream();
-		assertEquals((Integer) Exercise1.addUp(numbers), new Integer(4));
+		assertEquals(Exercise1.addUp(numbers), 4);
 	}
 
 	@Test
 	public void shouldReturn0ForAddingUpEmptyLists() {
 		Stream<Integer> numbers = Stream.empty();
-		assertEquals((Integer) Exercise1.addUp(numbers), new Integer(0));
+		assertEquals(Exercise1.addUp(numbers), 0);
 	}
 
 	@Test
