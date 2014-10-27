@@ -7,7 +7,9 @@ import edu.bobra.lambdas.domain.Artist;
 public class Exercise2 {
 
 	public static int countMembers(Stream<Artist> artists) {
-		return artists.map(artist -> artist.getMembers().count()).reduce(0L, (accumulator, numberOfMembers) -> accumulator + numberOfMembers).intValue();
+		return artists.
+				map(artist -> artist.getMembers().count()).
+				reduce(0L, (accumulator, numberOfMembers) -> accumulator + numberOfMembers).
+				intValue();
 	}
-
 }

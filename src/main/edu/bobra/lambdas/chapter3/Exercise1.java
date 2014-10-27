@@ -10,7 +10,8 @@ import edu.bobra.lambdas.domain.Artist;
 public class Exercise1 {
 
 	public static int addUp(Stream<Integer> numbers) {
-		return numbers.reduce(0, (accumulator, number) -> accumulator + number);
+		return numbers.
+				reduce(0, (accumulator, number) -> accumulator + number);
 	}
 
 	public static List<String> formatArtists(Stream<Artist> artists) {
@@ -20,7 +21,8 @@ public class Exercise1 {
 	}
 	
 	public static List<Album> findAlbumsWithNoMoreThanNTracks(Stream<Album> albums, int maxNumberOfTracks) {
-		return albums.filter(album -> hasFewerTracksThan(album, maxNumberOfTracks)).collect(Collectors.toList());
+		return albums.filter(album -> hasFewerTracksThan(album, maxNumberOfTracks)).
+				collect(Collectors.toList());
 	}
 
 	private static boolean hasFewerTracksThan(Album album, int maxNumberOfTracks) {
