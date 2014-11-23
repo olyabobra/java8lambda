@@ -9,7 +9,7 @@ public class Exercise2 {
 	public static int countMembers(Stream<Artist> artists) {
 		return artists.
 				map(artist -> artist.getMembers().count()).
-				reduce(0L, (accumulator, numberOfMembers) -> accumulator + numberOfMembers).
+				reduce(0L, Long::sum).
 				intValue();
 	}
 }

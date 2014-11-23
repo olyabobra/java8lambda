@@ -38,5 +38,4 @@ public class Exercise7Test {
 		assertEquals(Exercise7.withMostLowerCaseLetters(inputStrings),
 				Optional.of(WITH_5_LOWERCASE_LETTERS));
 	}
-
 }

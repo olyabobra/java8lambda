@@ -9,6 +9,6 @@ public class Exercise7 {
 
 	public static Optional<String> withMostLowerCaseLetters(List<String> input) {
 		return input.stream().
-				max((s, t) -> (int) (lowerCaseCount(s) - lowerCaseCount(t)));
+				max((s, t) ->  lowerCaseCount(s) - lowerCaseCount(t));
 	}
 }
