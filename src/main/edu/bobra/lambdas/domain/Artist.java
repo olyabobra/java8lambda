@@ -74,4 +74,11 @@ public class Artist {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Artist [name=" + name + ", origin=" + origin + ", members="
+				+ members + "]";
+	}
+	
 }
